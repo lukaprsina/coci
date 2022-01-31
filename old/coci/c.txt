@@ -1,0 +1,4 @@
+hash<št, vector povezanih>
+sortiraj po št povezanih
+
+    
