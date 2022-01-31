@@ -125,4 +125,29 @@ int main()
 {
     ios::sync_with_stdio(false);
     cin.tie(0);
+
+    int n;
+    cin >> n;
+    vi nums;
+
+    rep(i, n - 1)
+    {
+        int x;
+        cin >> x;
+        nums.PB(x);
+    }
+
+    sort(all(nums));
+
+    int j = 1;
+    rep(i, nums.size())
+    {
+        if (nums[i] != j)
+        {
+            break;
+        }
+        j++;
+    }
+
+    cout << j << endl;
 }
