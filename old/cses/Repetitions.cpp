@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 
 typedef long long ll;
@@ -25,4 +26,27 @@ int main()
 #ifdef LOCAL
     freopen("input.txt", "r", stdin);
 #endif
+
+    string seq;
+    cin >> seq;
+
+    int n = 1;
+    int maxNum = 1;
+    char last = 'B';
+
+    for (char c : seq)
+    {
+        if (c == last)
+        {
+            n++;
+            maxNum = max(maxNum, n);
+        }
+        else
+        {
+            n = 1;
+            last = c;
+        }
+    }
+
+    cout << maxNum << endl;
 }

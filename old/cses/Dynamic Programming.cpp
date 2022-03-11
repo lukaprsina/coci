@@ -25,4 +25,35 @@ int main()
 #ifdef LOCAL
     freopen("input.txt", "r", stdin);
 #endif
+
+    int n;
+    cin >> n;
+    vi arr;
+
+    int a;
+    rep(i, n)
+    {
+        cin >> a;
+        arr.PB(a);
+    }
+
+    vi length;
+
+    for (int k = 0; k < n; k++)
+    {
+        length.PB(1);
+        for (int i = 0; i < k; i++)
+        {
+            if (arr[i] < arr[k])
+            {
+                length[k] = max(length[k], length[i] + 1);
+            }
+        }
+    }
+
+    rep(i, length.size())
+    {
+        cout << length[i] << " ";
+    }
+    cout << endl;
 }

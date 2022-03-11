@@ -1,0 +1,9 @@
+vhodi:
+    višine stolpnic
+
+izhod:
+    tabela številk za barvo stolpnice
+
+count
+za vsako stolpnico:
+    pobarvaj z barvo x

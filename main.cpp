@@ -18,6 +18,22 @@ typedef vector<string> vstr;
 #define PB push_back
 #define MP make_pair
 
+const ll MOD = 1e9 + 7;
+
+ll fastpow2(int x)
+{
+    ll res = 1;
+    ll a = 2;
+    while (x > 0)
+    {
+        if (x & 1)
+            res = (res * a) % MOD;
+        a = (a * a) % MOD;
+        x >>= 1;
+    }
+    return res;
+}
+
 int main()
 {
     ios::sync_with_stdio(false);
@@ -25,4 +41,9 @@ int main()
 #ifdef LOCAL
     freopen("input.txt", "r", stdin);
 #endif
+
+    ll n;
+    cin >> n;
+
+    cout << fastpow2(n) << endl;
 }

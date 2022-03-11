@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 
 typedef long long ll;
@@ -25,4 +26,25 @@ int main()
 #ifdef LOCAL
     freopen("input.txt", "r", stdin);
 #endif
+
+    int n;
+    cin >> n;
+
+    vi arr(n);
+    rep(i, n)
+    {
+        cin >> arr[i];
+    }
+
+    uint64_t count = 0;
+    repi(i, 1, n)
+    {
+        while (arr[i] < arr[i - 1])
+        {
+            arr[i]++;
+            count++;
+        }
+    }
+
+    cout << count << endl;
 }

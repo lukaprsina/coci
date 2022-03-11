@@ -121,30 +121,36 @@ void debug_out(Head H, Tail... T)
 #define debug(...) 42
 #endif
 
-ll findWays(int n, vector<ll> &dp)
-{
-    if (n == 0)
-        return 1;
-
-    if (dp[n] != -1)
-        return dp[n];
-
-    ll cnt = 0;
-
-    for (int i = 1; i <= 6 && n >= i; i++)
-        cnt = (cnt + findWays(n - i, dp)) % 1000000007;
-
-    cout << n << ": " << cnt << endl;
-
-    return dp[n] = cnt;
-}
-
 int main()
 {
     ios::sync_with_stdio(false);
     cin.tie(0);
-    ll n;
-    cin >> n;
-    vector<ll> dp(n + 1, -1);
-    cout << findWays(n, dp) << endl;
+
+    ll a, b;
+    cin >> a >> b;
+
+    // count the number of integers between a and b where no two adjacent digits are the same
+
+    ll ans = 0;
+    for (ll i = a; i <= b; i++)
+    {
+        ll cur = i;
+        ll prev = -1;
+        while (cur != 0)
+        {
+            ll digit = cur % 10;
+            if (digit == prev)
+            {
+                break;
+            }
+            prev = digit;
+            cur /= 10;
+        }
+        if (cur == 0)
+        {
+            ans++;
+        }
+    }
+
+    cout << ans << endl;
 }

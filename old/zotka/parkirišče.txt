@@ -1,0 +1,17 @@
+vhod:
+    časi prihod, odhod
+    dolžine tovornjakov
+
+izhod:
+    minimalna dolžina parkirišča
+
+pomni dolžino
+pomni max dolžino
+vsakič ko se zgodi prihod ali izhod:
+    odštej dolžino odhajajočih tovornjakov
+    ter prištej prihajajoče
+    če je dolžina večja od max dolžine,
+        max dolžina = dolžina
+        
+rezultat je max dolžina
+

@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 
 typedef long long ll;
@@ -22,7 +23,25 @@ int main()
 {
     ios::sync_with_stdio(false);
     cin.tie(0);
-#ifdef LOCAL
-    freopen("input.txt", "r", stdin);
-#endif
+
+    int n;
+    cin >> n;
+    vi stolpnice(n);
+    vi barve;
+    rep(i, n)
+    {
+        int a;
+        cin >> a;
+        stolpnice.PB(a);
+    }
+
+    rep(i, n)
+    {
+        rep(j, n)
+        {
+            if (i == j)
+                continue;
+            cout << i << " " << j << endl;
+        }
+    }
 }

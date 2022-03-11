@@ -25,4 +25,14 @@ int main()
 #ifdef LOCAL
     freopen("input.txt", "r", stdin);
 #endif
+
+    ll n;
+    cin >> n;
+
+    __int128 cnt = 0;
+    repi(i, 1, n + 1)
+    {
+        cnt = ((__int128)i - 1) * (i + 4) * (i * i - 3 * i + 4) / 2;
+        printf("%lld\n", cnt);
+    }
 }
